@@ -1,0 +1,152 @@
+%placed here because of the preliminaries
+@article{strang1983maximal,
+  title={Maximal flow through a domain},
+  author={Strang, Gilbert},
+  journal={Mathematical Programming},
+  volume={26},
+  pages={123--143},
+  year={1983},
+  publisher={Springer}
+}
+
+@inproceedings{yuan2010study,
+  title={A study on continuous max-flow and min-cut approaches},
+  author={Yuan, Jing and Bae, Egil and Tai, Xue-Cheng},
+  booktitle={2010 ieee computer society conference on computer vision and pattern recognition},
+  pages={2217--2224},
+  year={2010},
+  organization={IEEE}
+}
+
+% deep learning part
+
+@book{chollet2021deep,
+  title={Deep learning with Python},
+  author={Chollet, Francois},
+  year={2021},
+  publisher={Simon and Schuster}
+}
+
+% rendering part
+
+@article{Kajiya1986,
+abstract = {We present an integral equation which generalizes a variety of known rendering algorithms. In the course of discussing a Monte Carlo solution we also present a new form of variance reduction, called Hierarchical sampling and give a number of elaborations shows that it may be an efficient new technique for a wide variety of Monte Carlo procedures. The resulting rendering algorithm extends the range of optical phenomena which can be effectively simulated.},
+author = {Kajiya, James T},
+doi = {10.1145/15922.15902},
+isbn = {0897911962},
+journal = {Proceedings of the 13th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH 1986},
+keywords = {Computer graphics,Distributed ray tracing,Monte Carlo,Radiosity,Raster graphics,Ray tracing,Variance reduction},
+number = {4},
+pages = {143--150},
+title = {{The rendering equation}},
+volume = {20},
+year = {1986}
+}
+
+@article{Immel1986,
+abstract = {A general radiosity method accounting for all inter-reflections of light between diffuse and non-diffuse surfaces in complex environments is introduced. As contrasted with previous radiosity methods, surfaces are no longer required to be perfectly diffuse reflectors and emitters. A complete, viewer independent description of the light leaving each surface in each direction is computed, allowing dynamic sequences of images to be rendered with little additional computation per image. Phenomena such as "reflection tracking", reflections following a moving observer across a specular surface are produced. Secondary light sources, such as the light from a spotlight reflecting off a mirror onto a wail are also accounted for.},
+author = {Immel, David S. and Cohen, Michael F. and Greenberg, Donald P.},
+doi = {10.1145/15922.15901},
+isbn = {0897911962},
+journal = {Proceedings of the 13th Annual Conference on Computer Graphics and Interactive Techniques, SIGGRAPH 1986},
+keywords = {Bi-directional reflectance,Depth buffer,Hidden-surface,Intensity,Non-diffuse reflection,Radiosity},
+number = {4},
+pages = {133--142},
+title = {{A radiosity method for non-diffuse environments}},
+volume = {20},
+year = {1986}
+}
+
+@article{lafortune1996mathematical,
+author = {Lafortune, Eric},
+journal = {Department of Computer Science, Faculty of Engineering, Katholieke Universiteit Leuven},
+pages = {74--79},
+title = {{Mathematical models and Monte Carlo algorithms for physically based rendering}},
+volume = {20},
+year = {1996}
+}
+
+@inproceedings{veach1997metropolis,
+author = {Veach, Eric and Guibas, Leonidas J},
+booktitle = {Proceedings of the 24th annual conference on Computer graphics and interactive techniques},
+pages = {65--76},
+title = {{Metropolis light transport}},
+year = {1997}
+}
+
+@article{Jensen1996,
+abstract = {This paper presents a two pass global illumination method based on the concept of photon maps. It represents a significant improvement of a previously described approach both with respect to speed, accuracy and versatility. In the first pass two photon maps are created by emitting packets of energy (photons) from the light sources and storing these as they hit surfaces within the scene. We use one high resolution caustics photon map to render caustics that are visualized directly and one low resolution photon map that is used during the rendering step. The scene is rendered using a distribution ray tracing algorithm optimized by using the in- formation in the photon maps. Shadow photons are used to render shadows more efficiently and the directional information in the photon map is used to generate optimized sampling directions and to limit the recursion in the distribution ray tracer by providing an estimate of the radiance on all surfaces with the exception of specular and highly glossy surfaces. The results presented demonstrate global illumination in scenes containing pro- cedural objects and surfaces with diffuse and glossy reflection models. The imple- mentation is also compared with the Radiance program.},
+author = {Jensen, Henrik Wann},
+doi = {10.1007/978-3-7091-7484-5_3},
+keywords = {global illumination,monte carlo ray trac-,photon maps},
+pages = {21--30},
+title = {{Global Illumination using Photon Maps}},
+volume = {96},
+year = {1996}
+}
+
+@article{Kulla2012,
+abstract = {We introduce a set of robust importance sampling techniques which allow efficient calculation of direct and indirect Lighting from arbitrary light sources in both homogeneous and heterogeneous media. We show how to distribute Samples along a ray proportionally to the incoming radiance for point and area lights. In heterogeneous media, we Decouple ray marching from light calculations by computing a representation of the transmittance function that can Be quickly evaluated during sampling, at the cost of a small amount of bias. This representation also allows the Calculation of another probability density function which can direct samples to regions most likely to scatter light. These techniques are orthogonal and can be combined via multiple importance sampling to further reduce variance. Our method has very modest per-ray memory requirements and does not require any preprocessing, making it Simple to integrate into production ray tracing based renderers. {\textcopyright} 2012 Sony Pictures Imageworks Inc. All Rights Reserved.},
+author = {Kulla, Christopher and Fajardo, Marcos},
+doi = {10.1111/j.1467-8659.2012.03148.x},
+issn = {14678659},
+journal = {Computer Graphics Forum},
+number = {4},
+pages = {1519--1528},
+title = {{Importance sampling techniques for path tracing in participating media}},
+volume = {31},
+year = {2012}
+}
+@article{Laine2010,
+abstract = {In this paper we examine the possibilities of using voxel representations as a generic way for expressing complex and feature-rich geometry on current and future GPUs. We present in detail a compact data structure for storing voxels and an efficient algorithm for performing ray casts using this structure. We augment the voxel data with novel contour information that increases geometric resolution, allows more compact encoding of smooth surfaces, and accelerates ray casts. We also employ a novel normal compression format for storing high-precision object-space normals. Finally, we present a variable-radius post-process filtering technique for smoothing out blockiness caused by discrete sampling of shading attributes. Our benchmarks show that our voxel representation is competitive with triangle-based representations in terms of ray casting performance, while allowing tremendously greater geometric detail and unique shading information for every voxel. Copyright {\textcopyright} 2010 by the Association for Computing Machinery, Inc.},
+author = {Laine, Samuli and Karras, Tero},
+doi = {10.1145/1730804.1730814},
+isbn = {9781605589381},
+journal = {Proceedings of I3D 2010: The 2010 ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games},
+pages = {55--63},
+title = {{Efficient sparse voxel octrees}},
+year = {2010}
+}
+
+@article{10.1145/361002.361007,
+address = {New York, NY, USA},
+author = {Bentley, Jon Louis},
+doi = {10.1145/361002.361007},
+issn = {0001-0782},
+journal = {Commun. ACM},
+keywords = {associative retrieval,attribute,binary search trees,binary tree insertion,information retrieval system,intersection queries,key,nearest neighbor queries,partial match queries},
+month = {sep},
+number = {9},
+pages = {509--517},
+publisher = {Association for Computing Machinery},
+title = {{Multidimensional Binary Search Trees Used for Associative Searching}},
+url = {https://doi.org/10.1145/361002.361007},
+volume = {18},
+year = {1975}
+}
+
+@book{10.5555/3044800,
+address = {San Francisco, CA, USA},
+author = {Pharr, Matt and Jakob, Wenzel and Humphreys, Greg},
+edition = {3rd},
+isbn = {0128006455},
+publisher = {Morgan Kaufmann Publishers Inc.},
+title = {{Physically Based Rendering: From Theory to Implementation}},
+year = {2016}
+}
+
+@article{10.1145/2508363.2508377,
+address = {New York, NY, USA},
+author = {Gkioulekas, Ioannis and Zhao, Shuang and Bala, Kavita and Zickler, Todd and Levin, Anat},
+doi = {10.1145/2508363.2508377},
+issn = {0730-0301},
+journal = {ACM Trans. Graph.},
+keywords = {inverse rendering,material dictionaries,scattering},
+month = {nov},
+number = {6},
+publisher = {Association for Computing Machinery},
+title = {{Inverse Volume Rendering with Material Dictionaries}},
+url = {https://doi.org/10.1145/2508363.2508377},
+volume = {32},
+year = {2013}
+}
