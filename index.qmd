@@ -22,53 +22,55 @@ from: markdown+emoji
 ---
 
 ```{python}
+#|  echo: false
 import plotly.io as pio
 pio.renderers.default = "plotly_mimetype+notebook_connected"
 ```
 
-## Markdown
-
-Markdown is an easy to read and write text format:
-
-- It's _plain text_ so works well with version control
-- It can be **rendered** into HTML, PDF, and more
-- Learn more at: <https://quarto.org/docs/authoring/>
+## Introduction
+Nuclear cardiology use noninvasive technqiues to assess the myocardial metabolism, evaluate the pumping function of the heart as well as visualize the size and location of the metabolic deficiency.
 
 ::: {.callout-note}
 ## Why is it called nuclear?
+The imaging is based on capturing the incident radiation from the injected radiopharmaceuticals. The method is labaled "nuclear" because the gamma photons are the result of radiactive decay.
 :::
 
 ::: {.callout-important}
 ## Is it dangerous?
+They are completely safe and the uptake and radiation exposure during a heart scan is usually around 1.5 mSv, which compared to the yearly background radiation exposure 2.4 mSv, is negligible.
 :::
 
 
-## Code Cell
+## Single-photon emission computed tomography
 
-Here is a Python code cell:
+During this class, we will focus building models to solve problems in Single-photon emission computed tomography (SPECT).
 
-```{python}
-import os
-os.cpu_count()
-```
-
-## Equation
-
-Use LaTeX to write equations:
-
-$$
-\chi' = \sum_{i=1}^n k_i s_i^2
-$$
+## Visualization
 
 ```{python}
 #| title: GDP and Life Expectancy
-import plotly.express as px
-df = px.data.gapminder()
-px.scatter(
-  df, x="gdpPercap", y="lifeExp", 
-  animation_frame="year", animation_group="country",
-  size="pop", color="continent", hover_name="country", 
-  facet_col="continent", log_x=True, size_max=45, 
-  range_x=[100,100000], range_y=[25,90]
-)
+#| echo : false
+import plotly.graph_objects as go
+import numpy as np
+import nrrd
+
+X, Y, Z = np.mgrid[0:128:128j, 0:128:128j, 0:128:128j]
+vol_data, header = nrrd.read('data/class_webpage_data.nrrd')
+vol_data = np.transpose(vol_data, (2, 1, 0))
+
+fig = go.Figure(data=go.Volume(
+    x=X.flatten(),
+    y=Y.flatten(),
+    z=Z.flatten(),
+    value=np.flip(vol_data.flatten()),
+    isomin=0.01,
+    isomax=1.0,
+    opacity=0.1, # needs to be small to see through all surfaces
+    surface_count=17, # needs to be a large number for good volume rendering
+    ))
+fig.show()
 ```
+
+## Base materials
+
+The motivation and the archetype of this class is written in [oftankonyv](http://oftankonyv.reak.bme.hu/).
