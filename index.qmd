@@ -11,7 +11,9 @@ author:
 date: "2024-12-10"
 bibliography: preliminaries.bib
 engine: jupyter
-format: html
+format:
+  html:
+    toc: true
 execute:
   echo: true
   freeze: auto

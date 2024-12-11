@@ -1,4 +1,1 @@
-.page-layout-custom {
-    margin-left: 2%;
-    margin-right: 2%;
-}
+$grid-margin-width: 300px !default;
