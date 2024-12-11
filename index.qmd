@@ -48,7 +48,7 @@ During this class, we will focus building models to solve problems in Single-pho
 ## Visualization
 
 ```{python}
-#| title: GDP and Life Expectancy
+#| title: Abdominal volume render of a Tc99MIBI scan
 #| echo : false
 import plotly.graph_objects as go
 import numpy as np
