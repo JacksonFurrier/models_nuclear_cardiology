@@ -27,7 +27,7 @@ Let $g^{\dagger} \in \mathbf{L}^{1}(\mathbb{M})$ with $g^{\dagger} \geq 0$. A po
 
 ::: {.callout-tip}
 ## Proposition
-Let $G$ be a Poisson process with intensity $g^{\dagger} \in \mathbf{L}^{1}(\mathbb{M})$. Then for each measurable $A \subset /mathbb{M}$ the random variable $G(A)$ is Poisson distributed with parameter $\lambda = \int_{A} g^{\dagger} dx$, i.e. ${\bf P}[G(A) = k] = e^{-\lambda} \frac{\lambda^{k}}{k!}$ for $k \in \mathbb{N}$.
+Let $G$ be a Poisson process with intensity $g^{\dagger} \in \mathbf{L}^{1}(\mathbb{M})$. Then for each measurable $A \subset \mathbb{M}$ the random variable $G(A)$ is Poisson distributed with parameter $\lambda = \int_{A} g^{\dagger} dx$, i.e. ${\bf P}[G(A) = k] = e^{-\lambda} \frac{\lambda^{k}}{k!}$ for $k \in \mathbb{N}$.
 :::
 
 ::: {.callout-tip}
