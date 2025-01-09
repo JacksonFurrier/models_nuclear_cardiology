@@ -27,10 +27,10 @@ Let $g^{\dagger} \in \mathbf{L}^{1}(\mathbb{M})$ with $g^{\dagger} \geq 0$. A po
 
 ::: {.callout-tip}
 ## Proposition
-Let $G$ be a Poisson process with intensity $g^{\dagger} \in \mathbf{L}^{1})(\mathbb{M})$. Then for each measurable $A \subset /mathbb{M}$ the random variable $G(A)$ is Poisson distributed with parameter $\lambda = \int_{A} g^{\dagger} dx$, i.e. ${bf P}[G(A) = k] = e^{-\lambda} \frac{\lambda^{k}}{k!} for k \in \mathbb{N}$.
+Let $G$ be a Poisson process with intensity $g^{\dagger} \in \mathbf{L}^{1}(\mathbb{M})$. Then for each measurable $A \subset /mathbb{M}$ the random variable $G(A)$ is Poisson distributed with parameter $\lambda = \int_{A} g^{\dagger} dx$, i.e. ${\bf P}[G(A) = k] = e^{-\lambda} \frac{\lambda^{k}}{k!}$ for $k \in \mathbb{N}$.
 :::
 
 ::: {.callout-tip}
 ## Proposition
-Poisson process $G$ with intensity $g^{\dagger} \in \mathbf{L}(\mathbb{M}) conditioned on $G(\mathbb{M}) = N$ is a Bernoulli process with parameter $N$ and probability measure $\mu(A) = \int_{A} g^{\dagger} / \int_{\mathbb{M}}g^{\dagger}dx.$ In other words, conditioned on $G(\mathbb{M}) = N$ the points are distributed like independent random variables $X_{1}, \dots, X_{N}$ distributed according to $\mu$.
+Poisson process $G$ with intensity $g^{\dagger} \in \mathbf{L}(\mathbb{M})$ conditioned on $G(\mathbb{M}) = N$ is a Bernoulli process with parameter $N$ and probability measure $\mu(A) = \int_{A} g^{\dagger} / \int_{\mathbb{M}}g^{\dagger}dx.$ In other words, conditioned on $G(\mathbb{M}) = N$ the points are distributed like independent random variables $X_{1}, \dots, X_{N}$ distributed according to $\mu$.
 :::
