@@ -47,7 +47,8 @@ During this class, we will focus building models to solve problems in Single-pho
 
 ## Visualization
 
-```{python}
+```default
+{python}
 #| title: Abdominal volume render of a Tc99MIBI scan
 #| echo : false
 import plotly.graph_objects as go

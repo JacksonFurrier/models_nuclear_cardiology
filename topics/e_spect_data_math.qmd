@@ -1,0 +1,36 @@
+---
+title: Mathematical understanding of SPECT data
+---
+
+Single-photon emission computed tomography (SPECT) data is inherently stochastic. It's stochastic nature comes from the nuclear decay of radioisotopes in the molecular structure of the radiopharmaceuticals.
+
+## Mathematical modelling of the "acquisition"
+Many and most of the problems in SPECT imaging comes from the following formula of the inverse problem as an operator equation
+$$
+F(u) = g^{\dagger},
+$$
+where the unknown quantity of interest is $u$, which can be described as an element in a real Banach-space $X$, the data $g^{\dagger}$ is non-negative, integrable function on some compact manifold $\mathbb{M} \subset \mathbb{R}^{d}$ and the possibly non-linear forward operator $F$ describes the imaging setup.
+
+In general the ideal photon detection can be described by a Poisson point process (PPP) $G$, the density of which is the marginal spatial photon density $g^{\dagger}$. Let $\{x_{1}, \dots, x_{N}\} \subset \mathbb{M}$ denote the positions, where the photons were detected. The total number $N$ of detected photons is also random. Let $$G = \sum_{i=1}^{N} \delta_{x_{i}}$$ as a sum of Dirac-measures at the photon positions and denote by $$G(A)= \#\{1 \leq i \leq N | x_{i} \in A \}$$ the number of photons in a measurable subset $A \subset \mathbb{M}$. Then it is physically evident that $${\bf E}[G(A)] = \int_{A} g^{\dagger} dx$$ and that the random variables $G(A_{i}), i\in [1, M]$ for any finite number of disjoint, measurable sets $A_{i} \subset \mathbb{M}$ are stochastically independent. Hence, by definition, $G$ is a Poisson process, and as a consequence, $G(A)$ is a poisson distributed integer-valued random variable.
+
+## Poisson processes of SPECT data
+A point process on $\mathbb{M}$ can be seen as a random collection of points $\{ x_{i}, \dots, x_{N} \} \subset \mathbb{M}$ satisfying certain measurability properties. 
+
+::: {.callout-note}
+## Definition (Poisson point process)
+Let $g^{\dagger} \in \mathbf{L}^{1}(\mathbb{M})$ with $g^{\dagger} \geq 0$. A point process $G = \sum_{i=1}^{N} \delta_{x_{i}}$ is called a Poisson point process (PPP) or Poisson process (PP) with intensity $g^{\dagger}$ if
+
+(1) For each choice of disjoint, measurable sets $A_{1}, \dots, A_{n} \subset \mathbb{M}$ random variables $G(A_{j})$ are stochastically independent. 
+
+(2) ${\bf E}[G(A)] = \int_{A} g^{\dagger} dx$ for each measurable set $A \subset \mathbb{M}$.
+:::
+
+::: {.callout-tip}
+## Proposition
+Let $G$ be a Poisson process with intensity $g^{\dagger} \in \mathbf{L}^{1})(\mathbb{M})$. Then for each measurable $A \subset /mathbb{M}$ the random variable $G(A)$ is Poisson distributed with parameter $\lambda = \int_{A} g^{\dagger} dx$, i.e. ${bf P}[G(A) = k] = e^{-\lambda} \frac{\lambda^{k}}{k!} for k \in \mathbb{N}$.
+:::
+
+::: {.callout-tip}
+## Proposition
+Poisson process $G$ with intensity $g^{\dagger} \in \mathbf{L}(\mathbb{M}) conditioned on $G(\mathbb{M}) = N$ is a Bernoulli process with parameter $N$ and probability measure $\mu(A) = \int_{A} g^{\dagger} / \int_{\mathbb{M}}g^{\dagger}dx.$ In other words, conditioned on $G(\mathbb{M}) = N$ the points are distributed like independent random variables $X_{1}, \dots, X_{N}$ distributed according to $\mu$.
+:::
