@@ -32,5 +32,19 @@ Let $G$ be a Poisson process with intensity $g^{\dagger} \in \mathbf{L}^{1}(\mat
 
 ::: {.callout-tip}
 ## Proposition
-Poisson process $G$ with intensity $g^{\dagger} \in \mathbf{L}(\mathbb{M})$ conditioned on $G(\mathbb{M}) = N$ is a Bernoulli process with parameter $N$ and probability measure $\mu(A) = \int_{A} g^{\dagger} / \int_{\mathbb{M}}g^{\dagger}dx.$ In other words, conditioned on $G(\mathbb{M}) = N$ the points are distributed like independent random variables $X_{1}, \dots, X_{N}$ distributed according to $\mu$.
+Poisson process $G$ with intensity $g^{\dagger} \in \mathbf{L}^{1}(\mathbb{M})$ conditioned on $G(\mathbb{M}) = N$ is a Bernoulli process with parameter $N$ and probability measure $\mu(A) = \int_{A} g^{\dagger} / \int_{\mathbb{M}}g^{\dagger}dx.$ In other words, conditioned on $G(\mathbb{M}) = N$ the points are distributed like independent random variables $X_{1}, \dots, X_{N}$ distributed according to $\mu$.
+:::
+
+## Poisson process characteristics
+Few of the properties of the Poisson processes are the following
+
+::: {.callout-note}
+## Lawfulness
+It means that the events are not arriving in the exact same time
+$$\lim_{\Delta t \rightarrow 0} P(G(t + \Delta t) - G(t) > 1\ |\ G(t + \Delta t) - G(t) \geq 1 ) = 0$$
+:::
+
+::: {.callout-note}
+## Memory-less, ageless
+This means that the events arriving after another are stochastically independent. $$P(G(A) > a + b\ |\ G(A) > a) = P(G(A) > b) $$
 :::
