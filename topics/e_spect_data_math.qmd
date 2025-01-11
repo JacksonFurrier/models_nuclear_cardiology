@@ -56,3 +56,81 @@ Zleho ideas, Markov processes
 * Gaussian approximation will be good with a weighted least squares, division by stdev will result in a good approximation
 * Photon decay, ket decay kozott exp az ido, linear transform of poisson will be our image
 * PDHG fix stepsize nem optimalis, lehetne rajta javitani
+
+## Projection data of SPECT
+
+
+```{python}
+#| echo : false
+# Loading the data
+import plotly.graph_objects as go
+import numpy as np
+import nrrd
+
+num_mph_proj = 16
+num_par_proj = 16
+
+proj_data_mph, mph_header = nrrd.read('../data/class_webpage_projs_mph.nrrd')
+proj_data_par, par_header = nrrd.read('../data/class_webpage_projs_par.nrrd')
+```
+```{python}
+#| echo : false
+from IPython.display import HTML
+from numpy import random
+from matplotlib import animation
+import matplotlib.pyplot as plt
+```
+```{python}
+#| title: Multi-pinhole projection frames with helical trajectory
+#| echo : false
+%%capture
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.animation as animation
+
+fig, ax = plt.subplots()
+
+ims = []
+for i in range(num_mph_proj):
+    im = ax.imshow(proj_data_mph[i], animated=True)
+    im.axes.get_xaxis().set_visible(False)
+    im.axes.get_yaxis().set_visible(False)
+    ims.append([im])
+
+ani_mph = animation.ArtistAnimation(fig, ims, interval=50, blit=True,
+                                repeat_delay=1000)
+```
+```{python}
+#| echo : false
+HTML(ani_mph.to_jshtml())
+```
+
+```{python}
+#| title: Parallel (LEHR-HS) projection frames with helical trajectory
+#| echo : false
+%%capture
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.animation as animation
+
+fig, ax = plt.subplots()
+
+ims = []
+for i in range(num_par_proj):
+    im = ax.imshow(proj_data_par[i], animated=True)
+    im.axes.get_xaxis().set_visible(False)
+    im.axes.get_yaxis().set_visible(False)
+    ims.append([im])
+
+ani_par = animation.ArtistAnimation(fig, ims, interval=50, blit=True,
+                                repeat_delay=1000)
+```
+
+```{python}
+#| echo : false
+HTML(ani_par.to_jshtml())
+```
