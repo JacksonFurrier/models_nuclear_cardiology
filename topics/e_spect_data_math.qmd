@@ -159,14 +159,14 @@ res_std_dev = least_squares(fun_poi_std_dev, x_0.flatten())
 
 ```{python}
 #| echo : false
-from sklearn.linear_model import LinearRegression
-x = np.arange(0, 64 * 64, 1)
-y = proj_data_par[0].flatten()
+#from sklearn.linear_model import LinearRegression
+#x = np.arange(0, 64 * 64, 1)
+#y = proj_data_par[0].flatten()
 
-std_dev_proj = np.std(y)
-w = np.where(y > 0, std_dev_proj, 1)
+#std_dev_proj = np.std(y)
+#w = np.where(y > 0, std_dev_proj, 1)
 
-reg = LinearRegression().fit(x, y, w)
+#reg = LinearRegression().fit(x, y, w)
 
 ```
 

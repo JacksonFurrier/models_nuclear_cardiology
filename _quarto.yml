@@ -8,4 +8,8 @@ website:
     contents:
       - section: "Topics"
         contents: topics/*
+      - section: "Image processing"
+        contents: 
+          - topics/d_processing.qmd
+          - topics/processing/a_moco.qmd
       
