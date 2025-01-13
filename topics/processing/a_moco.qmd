@@ -1,0 +1,127 @@
+---
+title: Motion phenomena and correction in SPECT
+---
+
+One of the big problems during acquisiton of MPI SPECT is the [motion phenomena](https://eanm.org/wp-content/uploads/2024/06/EANM_2014_Myocardial_Tech_Guide.pdf), which can result in acquisition readback, misdiagnosis or the evaluation of invasive procedures on patients. 
+
+## Motion effect on frames
+
+```{python}
+#| echo : false
+# Loading the data
+import plotly.graph_objects as go
+import numpy as np
+import nrrd
+
+num_moco_proj = 64
+
+proj_data_moco_par, moco_par_header = nrrd.read('../../data/class_webpage_projs_motion_par.nrrd')
+```
+
+
+```{python}
+#| echo : false
+from IPython.display import HTML
+from numpy import random
+from matplotlib import animation
+import matplotlib.pyplot as plt
+```
+
+```{python}
+#| title: Projection frames with motion phenomena
+#| echo : false
+%%capture
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.animation as animation
+
+fig, ax = plt.subplots()
+
+ims = []
+for i in range(num_moco_proj):
+    im = ax.imshow(proj_data_moco_par[i], animated=True)
+    im.axes.get_xaxis().set_visible(False)
+    im.axes.get_yaxis().set_visible(False)
+    ims.append([im])
+
+ani_par_motion = animation.ArtistAnimation(fig, ims, interval=50, blit=True,
+                                repeat_delay=1000)
+```
+
+Effect of motion on the projection frames
+```{python}
+#| echo : false
+HTML(ani_par_motion.to_jshtml())
+```
+
+
+## Motion effect on the reconstructed volume
+After reconstructing $u$ with the adjugate forward (backward) operator $F^{*}$, one arrives at a volume with incorrect cardiac activities and shape variations.
+
+
+```{.python include="../../src/tools/recon/projector.py"}
+# Running reconstruction and all kinds of magic
+```
+
+```{python}
+#| echo: false
+%run "../../src/tools/recon/projector.py"
+```
+
+```{python}
+#| echo : false
+bprojector = backward_projector()
+lv_volume = bprojector(proj_data_moco_par)
+```
+
+```{python}
+#| title: Reconstructed volume from projection frames with motion effect
+#| echo : false
+%%capture
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.animation as animation
+
+fig, ax = plt.subplots()
+
+ims = []
+for i in range(num_moco_proj):
+    im = ax.imshow(lv_volume[i], animated=True)
+    im.axes.get_xaxis().set_visible(False)
+    im.axes.get_yaxis().set_visible(False)
+    ims.append([im])
+
+ani_par_motion_vol = animation.ArtistAnimation(fig, ims, interval=50, blit=True, repeat_delay=1000)
+```
+
+```{python}
+#| echo : false
+HTML(ani_par_motion_vol.to_jshtml())
+```
+
+## Algorithms to detect and correct motion
+### 1. Optical flow
+1. Classical approach 
+This methodology is based on the assumption of *brightness constancy* , which means that the intensity of a point between consecutive frames remains the same. This can be formalized as follows
+$$I(x, y, t) - I(x + u, y + v, t + 1) = 0, $$
+where $w = (u, v)$ is the displacement vector between the frames. This leads to an underdetermined system of equations, needing further constraints to overcome the [aperture problem](https://en.wikipedia.org/wiki/Motion_perception#The_aperture_problem).
+
+2. Regularized models
+There can be various techniques to regularize the aperture problem, where most naturally the *smoothness* constraint can be posed, where one can optimize the following [functional](https://en.wikipedia.org/wiki/Functional_(mathematics))
+$$E = \iint_{\Omega} \Psi(I(x + u, y + v, t + 1) - I(x, y, t)) + \alpha \Psi(|\nabla u|) + \alpha \Psi(|\nabla v|) dx dy,$$
+where $\Omega$ is the extent of the entire image $I(x, y, t)$, $\nabla$ is the nabla (gradient) operator, $\alpha$ is a constant and $\Psi(.)$ is a loss function. One approach to solve this optimization problem to use the [calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations) to compute the first variation and as a result get a necessary condition for the extremum. The *BCC* can be approximated by the [Taylor series](https://en.wikipedia.org/wiki/Taylor_series) expansion, more specifically 
+$$\frac{\delta I}{\delta x}u + \frac{\delta I}{\delta y}v + \frac{\delta I}{\delta t} = 0$$, wherewith the optimization problem can be rewritten as 
+$$E = \iint_{\Omega} \Psi(I_{x}u + I_{y}v + I_{t}) + \alpha \Psi(|\nabla u|) + \alpha \Psi(|\nabla v|) dx dy.$$
+
+3. Parametric models
+Instead of posing regularity constraints point-by-point on the pixels of the projection frames, one can group pixels into regions and estimate the motion of the regions themselves. This way one assumes that the motion can be estimated by a set of parameters, therefore the model looks as follows
+$$\hat{\alpha}= \underset{\alpha}{\operatorname{argmin}} \sum_{(x,y)\in R} g(x, y) \rho(x, y, I_{1}, I_{2}, u_{\alpha}, v_{\alpha}),$$
+where $\alpha$ is the set of parameters determining the motion of the region $R()$, data cost term is $\rho()$, $g()$ is the weighting funtion that determines the influence of pixel $(x, y)$ on the total cost, where $I_{1}$ and $I_{2}$ are the consecutive frames.
+
+### 2. Metamorphosis
+
+### 3. Correction during reconstruction
