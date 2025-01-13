@@ -8,6 +8,18 @@ author:
     affiliation: 
       - name: Eötvös Loránd University (Hungary)
       - department: Computer Algebra
+  - name: Bela Kari
+    orcid: 0009-0000-5091-7712
+    email: kari.bela@semmelweis.hu
+    affiliation:
+      - name: Semmelweis University (Hungary)
+      - department : Nuclear Medicine
+  - name: Adam Zlehovszky
+    orcid: 0009-0001-1896-855X
+    email: adam.zlehovszky@inf.elte.hu
+    affiliation:
+      - name: Eötvös Loránd University (Hungary)
+      - department: Computer Algebra
 date: "2024-12-10"
 bibliography: preliminaries.bib
 engine: jupyter
@@ -50,6 +62,7 @@ During this class, we will focus building models to solve problems in Single-pho
 ```{python}
 #| title: Abdominal volume render of a Tc99MIBI scan
 #| echo : false
+#| eval: false
 import plotly.graph_objects as go
 import numpy as np
 import nrrd

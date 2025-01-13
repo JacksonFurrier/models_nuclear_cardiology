@@ -50,11 +50,17 @@ This means that the events arriving after another are stochastically independent
 :::
 
 Zleho ideas, Markov processes
+
 * Sensitivity is a constant multiplier on the pixel values
+
 * Pixel values are independent, isotropically independent, binning is independent
+
 * They are independent as much as phone calls, it is like histogramming the areas and centers
+
 * Gaussian approximation will be good with a weighted least squares, division by stdev will result in a good approximation
+
 * Photon decay, ket decay kozott exp az ido, linear transform of poisson will be our image
+
 * PDHG fix stepsize nem optimalis, lehetne rajta javitani
 
 ## Projection data of SPECT
