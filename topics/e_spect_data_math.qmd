@@ -134,3 +134,91 @@ ani_par = animation.ArtistAnimation(fig, ims, interval=50, blit=True,
 #| echo : false
 HTML(ani_par.to_jshtml())
 ```
+
+## Approximation in L2
+
+```{python}
+#| echo : false
+# Approximating the parallel geometries
+from scipy.optimize import least_squares
+import numpy as np
+
+def fun_poi(x):
+    return np.sum(np.linalg.norm(proj_data_par[0] - np.reshape(x, [64, 64])))
+
+def fun_poi_std_dev(x):
+    std_dev = np.std(proj_data_par[0])
+    return np.sum(np.linalg.norm(proj_data_par[0] / std_dev - np.reshape(x, [64, 64])))
+
+x_0 = np.random.rand(64, 64) # start from a random matrix
+
+res = least_squares(fun_poi, x_0.flatten())
+res_std_dev = least_squares(fun_poi_std_dev, x_0.flatten())
+```
+
+
+```{python}
+#| echo : false
+from sklearn.linear_model import LinearRegression
+x = np.arange(0, 64 * 64, 1)
+y = proj_data_par[0].flatten()
+
+std_dev_proj = np.std(y)
+w = np.where(y > 0, std_dev_proj, 1)
+
+reg = LinearRegression().fit(x, y, w)
+
+```
+
+
+Approximating the original frames in $\mathbb{L}_{2}$
+
+```{python}
+#| echo : false
+import matplotlib.pyplot as plt
+
+appr_proj = np.reshape(res.x, [64, 64])
+appr_std_dev_proj = np.reshape(res_std_dev.x, [64, 64])
+diff_orig_appr_proj = np.abs(appr_proj - proj_data_par[0])
+
+fig, axs = plt.subplots(1, 3)
+
+axs[0].imshow(appr_proj)
+axs[0].set_xlabel("Original frame")
+axs[0].set_xticks([])
+axs[0].set_yticks([])
+
+axs[1].imshow(proj_data_par[0])
+axs[1].set_xlabel("Approx. frame")
+axs[1].set_xticks([])
+axs[1].set_yticks([])
+
+axs[2].imshow(diff_orig_appr_proj)
+axs[2].set_xlabel("Difference frame")
+axs[2].set_xticks([])
+axs[2].set_yticks([])
+
+print("L2 approximation error (sum): ", np.sum(np.abs(appr_proj - proj_data_par[0])))
+
+```
+
+```{python}
+prof_orig_proj = proj_data_par[0, 32, :]
+prof_appr_proj = appr_proj[32, :]
+prof_appr_std_dev_proj = appr_std_dev_proj[32, :]
+prof_diff_proj = diff_orig_appr_proj[32, :]
+
+x = np.arange(0, 64, 1)
+
+fig, ax = plt.subplots()
+
+ax.plot(x, prof_diff_proj)
+#ax.plot(x, prof_appr_std_dev_proj)
+ax.set_xlabel("Profile curve of the difference")
+
+```
+
+
+```{python}
+print(np.std(proj_data_par[0]))
+```
