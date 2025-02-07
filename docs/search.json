@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Models in Nuclear Cardiology",
+    "section": "",
+    "text": "Nuclear cardiology use noninvasive technqiues to assess the myocardial metabolism, evaluate the pumping function of the heart as well as visualize the size and location of the metabolic deficiency.\n\n\n\n\n\n\nWhy is it called nuclear?\n\n\n\nThe imaging is based on capturing the incident radiation from the injected radiopharmaceuticals. The method is labaled “nuclear” because the gamma photons are the result of radiactive decay.\n\n\n\n\n\n\n\n\nIs it dangerous?\n\n\n\nThey are completely safe and the uptake and radiation exposure during a heart scan is usually around 1.5 mSv, which compared to the yearly background radiation exposure 2.4 mSv, is negligible."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Models in Nuclear Cardiology",
+    "section": "",
+    "text": "Nuclear cardiology use noninvasive technqiues to assess the myocardial metabolism, evaluate the pumping function of the heart as well as visualize the size and location of the metabolic deficiency.\n\n\n\n\n\n\nWhy is it called nuclear?\n\n\n\nThe imaging is based on capturing the incident radiation from the injected radiopharmaceuticals. The method is labaled “nuclear” because the gamma photons are the result of radiactive decay.\n\n\n\n\n\n\n\n\nIs it dangerous?\n\n\n\nThey are completely safe and the uptake and radiation exposure during a heart scan is usually around 1.5 mSv, which compared to the yearly background radiation exposure 2.4 mSv, is negligible."
+  },
+  {
+    "objectID": "index.html#single-photon-emission-computed-tomography",
+    "href": "index.html#single-photon-emission-computed-tomography",
+    "title": "Models in Nuclear Cardiology",
+    "section": "Single-photon emission computed tomography",
+    "text": "Single-photon emission computed tomography\nDuring this class, we will focus building models to solve problems in Single-photon emission computed tomography (SPECT)."
+  },
+  {
+    "objectID": "index.html#visualization",
+    "href": "index.html#visualization",
+    "title": "Models in Nuclear Cardiology",
+    "section": "Visualization",
+    "text": "Visualization"
+  },
+  {
+    "objectID": "index.html#base-materials",
+    "href": "index.html#base-materials",
+    "title": "Models in Nuclear Cardiology",
+    "section": "Base materials",
+    "text": "Base materials\nThe motivation and the archetype of this class is written in oftankonyv."
+  },
+  {
+    "objectID": "topics/d_processing.html",
+    "href": "topics/d_processing.html",
+    "title": "Processing",
+    "section": "",
+    "text": "Here is my first post.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Processing"
+    ]
+  },
+  {
+    "objectID": "topics/a_radiopharmaceuticals.html",
+    "href": "topics/a_radiopharmaceuticals.html",
+    "title": "Radiopharmaceuticals",
+    "section": "",
+    "text": "Here is my first post.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Radiopharmaceuticals"
+    ]
+  },
+  {
+    "objectID": "topics/e_spect_data_math.html",
+    "href": "topics/e_spect_data_math.html",
+    "title": "Mathematical understanding of SPECT data",
+    "section": "",
+    "text": "Single-photon emission computed tomography (SPECT) data is inherently stochastic. It’s stochastic nature comes from the nuclear decay of radioisotopes in the molecular structure of the radiopharmaceuticals.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Mathematical understanding of SPECT data"
+    ]
+  },
+  {
+    "objectID": "topics/e_spect_data_math.html#mathematical-modelling-of-the-acquisition",
+    "href": "topics/e_spect_data_math.html#mathematical-modelling-of-the-acquisition",
+    "title": "Mathematical understanding of SPECT data",
+    "section": "Mathematical modelling of the “acquisition”",
+    "text": "Mathematical modelling of the “acquisition”\nMany and most of the problems in SPECT imaging comes from the following formula of the inverse problem as an operator equation \\[\nF(u) = g^{\\dagger},\n\\] where the unknown quantity of interest is \\(u\\), which can be described as an element in a real Banach-space \\(X\\), the data \\(g^{\\dagger}\\) is non-negative, integrable function on some compact manifold \\(\\mathbb{M} \\subset \\mathbb{R}^{d}\\) and the possibly non-linear forward operator \\(F\\) describes the imaging setup.\nIn general the ideal photon detection can be described by a Poisson point process (PPP) \\(G\\), the density of which is the marginal spatial photon density \\(g^{\\dagger}\\). Let \\(\\{x_{1}, \\dots, x_{N}\\} \\subset \\mathbb{M}\\) denote the positions, where the photons were detected. The total number \\(N\\) of detected photons is also random. Let \\[G = \\sum_{i=1}^{N} \\delta_{x_{i}}\\] as a sum of Dirac-measures at the photon positions and denote by \\[G(A)= \\#\\{1 \\leq i \\leq N | x_{i} \\in A \\}\\] the number of photons in a measurable subset \\(A \\subset \\mathbb{M}\\). Then it is physically evident that \\[{\\bf E}[G(A)] = \\int_{A} g^{\\dagger} dx\\] and that the random variables \\(G(A_{i}), i\\in [1, M]\\) for any finite number of disjoint, measurable sets \\(A_{i} \\subset \\mathbb{M}\\) are stochastically independent. Hence, by definition, \\(G\\) is a Poisson process, and as a consequence, \\(G(A)\\) is a poisson distributed integer-valued random variable.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Mathematical understanding of SPECT data"
+    ]
+  },
+  {
+    "objectID": "topics/e_spect_data_math.html#poisson-processes-of-spect-data",
+    "href": "topics/e_spect_data_math.html#poisson-processes-of-spect-data",
+    "title": "Mathematical understanding of SPECT data",
+    "section": "Poisson processes of SPECT data",
+    "text": "Poisson processes of SPECT data\nA point process on \\(\\mathbb{M}\\) can be seen as a random collection of points \\(\\{ x_{i}, \\dots, x_{N} \\} \\subset \\mathbb{M}\\) satisfying certain measurability properties.\n\n\n\n\n\n\nDefinition (Poisson point process)\n\n\n\nLet \\(g^{\\dagger} \\in \\mathbf{L}^{1}(\\mathbb{M})\\) with \\(g^{\\dagger} \\geq 0\\). A point process \\(G = \\sum_{i=1}^{N} \\delta_{x_{i}}\\) is called a Poisson point process (PPP) or Poisson process (PP) with intensity \\(g^{\\dagger}\\) if\n\nFor each choice of disjoint, measurable sets \\(A_{1}, \\dots, A_{n} \\subset \\mathbb{M}\\) random variables \\(G(A_{j})\\) are stochastically independent.\n\\({\\bf E}[G(A)] = \\int_{A} g^{\\dagger} dx\\) for each measurable set \\(A \\subset \\mathbb{M}\\).\n\n\n\n\n\n\n\n\n\nProposition\n\n\n\nLet \\(G\\) be a Poisson process with intensity \\(g^{\\dagger} \\in \\mathbf{L}^{1}(\\mathbb{M})\\). Then for each measurable \\(A \\subset \\mathbb{M}\\) the random variable \\(G(A)\\) is Poisson distributed with parameter \\(\\lambda = \\int_{A} g^{\\dagger} dx\\), i.e. \\({\\bf P}[G(A) = k] = e^{-\\lambda} \\frac{\\lambda^{k}}{k!}\\) for \\(k \\in \\mathbb{N}\\).\n\n\n\n\n\n\n\n\nProposition\n\n\n\nPoisson process \\(G\\) with intensity \\(g^{\\dagger} \\in \\mathbf{L}^{1}(\\mathbb{M})\\) conditioned on \\(G(\\mathbb{M}) = N\\) is a Bernoulli process with parameter \\(N\\) and probability measure \\(\\mu(A) = \\int_{A} g^{\\dagger} / \\int_{\\mathbb{M}}g^{\\dagger}dx.\\) In other words, conditioned on \\(G(\\mathbb{M}) = N\\) the points are distributed like independent random variables \\(X_{1}, \\dots, X_{N}\\) distributed according to \\(\\mu\\).",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Mathematical understanding of SPECT data"
+    ]
+  },
+  {
+    "objectID": "topics/e_spect_data_math.html#poisson-process-characteristics",
+    "href": "topics/e_spect_data_math.html#poisson-process-characteristics",
+    "title": "Mathematical understanding of SPECT data",
+    "section": "Poisson process characteristics",
+    "text": "Poisson process characteristics\nFew of the properties of the Poisson processes are the following\n\n\n\n\n\n\nLawfulness\n\n\n\nIt means that the events are not arriving in the exact same time \\[\\lim_{\\Delta t \\rightarrow 0} P(G(t + \\Delta t) - G(t) &gt; 1\\ |\\ G(t + \\Delta t) - G(t) \\geq 1 ) = 0\\]\n\n\n\n\n\n\n\n\nMemory-less, ageless\n\n\n\nThis means that the events arriving after another are stochastically independent. \\[P(G(A) &gt; a + b\\ |\\ G(A) &gt; a) = P(G(A) &gt; b) \\]\n\n\nZleho ideas, Markov processes\n\nSensitivity is a constant multiplier on the pixel values\nPixel values are independent, isotropically independent, binning is independent\nThey are independent as much as phone calls, it is like histogramming the areas and centers\nGaussian approximation will be good with a weighted least squares, division by stdev will result in a good approximation\nPhoton decay, ket decay kozott exp az ido, linear transform of poisson will be our image\nPDHG fix stepsize nem optimalis, lehetne rajta javitani",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Mathematical understanding of SPECT data"
+    ]
+  },
+  {
+    "objectID": "topics/e_spect_data_math.html#projection-data-of-spect",
+    "href": "topics/e_spect_data_math.html#projection-data-of-spect",
+    "title": "Mathematical understanding of SPECT data",
+    "section": "Projection data of SPECT",
+    "text": "Projection data of SPECT\n\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect\n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Mathematical understanding of SPECT data"
+    ]
+  },
+  {
+    "objectID": "topics/e_spect_data_math.html#approximation-in-l2",
+    "href": "topics/e_spect_data_math.html#approximation-in-l2",
+    "title": "Mathematical understanding of SPECT data",
+    "section": "Approximation in L2",
+    "text": "Approximation in L2\nApproximating the original frames in \\(\\mathbb{L}_{2}\\)\n\n\nL2 approximation error (sum):  0.00019368553028974696\n\n\n\n\n\n\n\n\n\n\nprof_orig_proj = proj_data_par[0, 32, :]\nprof_appr_proj = appr_proj[32, :]\nprof_appr_std_dev_proj = appr_std_dev_proj[32, :]\nprof_diff_proj = diff_orig_appr_proj[32, :]\n\nx = np.arange(0, 64, 1)\n\nfig, ax = plt.subplots()\n\nax.plot(x, prof_diff_proj)\n#ax.plot(x, prof_appr_std_dev_proj)\nax.set_xlabel(\"Profile curve of the difference\")\n\nText(0.5, 0, 'Profile curve of the difference')\n\n\n\n\n\n\n\n\n\n\nprint(np.std(proj_data_par[0]))\n\n12.85805956206453",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Mathematical understanding of SPECT data"
+    ]
+  },
+  {
+    "objectID": "topics/c_reconstruction.html",
+    "href": "topics/c_reconstruction.html",
+    "title": "Reconstruction",
+    "section": "",
+    "text": "Here is my first post.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Reconstruction"
+    ]
+  },
+  {
+    "objectID": "topics/processing/a_moco.html",
+    "href": "topics/processing/a_moco.html",
+    "title": "Motion phenomena and correction in SPECT",
+    "section": "",
+    "text": "One of the big problems during acquisiton of MPI SPECT is the motion phenomena, which can result in acquisition readback, misdiagnosis or the evaluation of invasive procedures on patients.",
+    "crumbs": [
+      "Home",
+      "Image processing",
+      "Motion phenomena and correction in SPECT"
+    ]
+  },
+  {
+    "objectID": "topics/processing/a_moco.html#motion-effect-on-frames",
+    "href": "topics/processing/a_moco.html#motion-effect-on-frames",
+    "title": "Motion phenomena and correction in SPECT",
+    "section": "Motion effect on frames",
+    "text": "Motion effect on frames\nEffect of motion on the projection frames\n\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect",
+    "crumbs": [
+      "Home",
+      "Image processing",
+      "Motion phenomena and correction in SPECT"
+    ]
+  },
+  {
+    "objectID": "topics/processing/a_moco.html#motion-effect-on-the-reconstructed-volume",
+    "href": "topics/processing/a_moco.html#motion-effect-on-the-reconstructed-volume",
+    "title": "Motion phenomena and correction in SPECT",
+    "section": "Motion effect on the reconstructed volume",
+    "text": "Motion effect on the reconstructed volume\nAfter reconstructing \\(u\\) with the adjugate forward (backward) operator \\(F^{*}\\), one arrives at a volume with incorrect cardiac activities and shape variations.\n# Running reconstruction and all kinds of magic\n\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect",
+    "crumbs": [
+      "Home",
+      "Image processing",
+      "Motion phenomena and correction in SPECT"
+    ]
+  },
+  {
+    "objectID": "topics/processing/a_moco.html#algorithms-to-detect-and-correct-motion",
+    "href": "topics/processing/a_moco.html#algorithms-to-detect-and-correct-motion",
+    "title": "Motion phenomena and correction in SPECT",
+    "section": "Algorithms to detect and correct motion",
+    "text": "Algorithms to detect and correct motion\n\n1. Optical flow\n\nClassical approach This methodology is based on the assumption of brightness constancy , which means that the intensity of a point between consecutive frames remains the same. This can be formalized as follows \\[I(x, y, t) - I(x + u, y + v, t + 1) = 0, \\] where \\(w = (u, v)\\) is the displacement vector between the frames. This leads to an underdetermined system of equations, needing further constraints to overcome the aperture problem.\nRegularized models There can be various techniques to regularize the aperture problem, where most naturally the smoothness constraint can be posed, where one can optimize the following functional \\[E = \\iint_{\\Omega} \\Psi(I(x + u, y + v, t + 1) - I(x, y, t)) + \\alpha \\Psi(|\\nabla u|) + \\alpha \\Psi(|\\nabla v|) dx dy,\\] where \\(\\Omega\\) is the extent of the entire image \\(I(x, y, t)\\), \\(\\nabla\\) is the nabla (gradient) operator, \\(\\alpha\\) is a constant and \\(\\Psi(.)\\) is a loss function. One approach to solve this optimization problem to use the calculus of variations to compute the first variation and as a result get a necessary condition for the extremum. The BCC can be approximated by the Taylor series expansion, more specifically \\[\\frac{\\delta I}{\\delta x}u + \\frac{\\delta I}{\\delta y}v + \\frac{\\delta I}{\\delta t} = 0\\], wherewith the optimization problem can be rewritten as \\[E = \\iint_{\\Omega} \\Psi(I_{x}u + I_{y}v + I_{t}) + \\alpha \\Psi(|\\nabla u|) + \\alpha \\Psi(|\\nabla v|) dx dy.\\]\nParametric models Instead of posing regularity constraints point-by-point on the pixels of the projection frames, one can group pixels into regions and estimate the motion of the regions themselves. This way one assumes that the motion can be estimated by a set of parameters, therefore the model looks as follows \\[\\hat{\\alpha}= \\underset{\\alpha}{\\operatorname{argmin}} \\sum_{(x,y)\\in R} g(x, y) \\rho(x, y, I_{1}, I_{2}, u_{\\alpha}, v_{\\alpha}),\\] where \\(\\alpha\\) is the set of parameters determining the motion of the region \\(R()\\), data cost term is \\(\\rho()\\), \\(g()\\) is the weighting funtion that determines the influence of pixel \\((x, y)\\) on the total cost, where \\(I_{1}\\) and \\(I_{2}\\) are the consecutive frames.\n\n\n\n2. Metamorphosis\n\n\n3. Correction during reconstruction",
+    "crumbs": [
+      "Home",
+      "Image processing",
+      "Motion phenomena and correction in SPECT"
+    ]
+  },
+  {
+    "objectID": "topics/b_acquisition.html",
+    "href": "topics/b_acquisition.html",
+    "title": "Acquisition",
+    "section": "",
+    "text": "Here is my first post.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Acquisition"
+    ]
+  },
+  {
+    "objectID": "topics.html",
+    "href": "topics.html",
+    "title": "Topics",
+    "section": "",
+    "text": "Visited topics during the discussion of Nuclear Cardiology"
+  }
+]
