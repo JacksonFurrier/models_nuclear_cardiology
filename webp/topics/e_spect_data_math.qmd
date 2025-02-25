@@ -59,9 +59,7 @@ Zleho ideas, Markov processes
 
 * Gaussian approximation will be good with a weighted least squares, division by stdev will result in a good approximation
 
-* Photon decay, ket decay kozott exp az ido, linear transform of poisson will be our image
-
-* PDHG fix stepsize nem optimalis, lehetne rajta javitani
+* Photon decay, between two decay time is exponential, linear transform of poisson will be our image
 
 ## Projection data of SPECT
 
