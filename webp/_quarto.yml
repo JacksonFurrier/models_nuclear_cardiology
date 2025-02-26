@@ -22,6 +22,6 @@ website:
         contents: topics/*
       - section: "Image processing"
         contents: 
-          - topics/d_processing.qmd
-          - topics/processing/a_moco.qmd
+          - topics/4_processing.qmd
+          - topics/processing/1_moco.qmd
       
