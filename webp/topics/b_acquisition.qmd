@@ -1,4 +1,0 @@
----
-title: Acquisition
----
-Here is my first post.
