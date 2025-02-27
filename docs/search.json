@@ -76,7 +76,7 @@
     "href": "topics/0_spect_data_math.html#approximation-in-l2",
     "title": "Mathematical understanding of SPECT data",
     "section": "Approximation in L2",
-    "text": "Approximation in L2\nApproximating the original frames in \\(\\mathbb{L}_{2}\\)\n\n\nL2 approximation error (sum):  0.00010053194691821103\n\n\n\n\n\n\n\n\n\n\nprof_orig_proj = proj_data_par[0, 32, :]\nprof_appr_proj = appr_proj[32, :]\nprof_appr_std_dev_proj = appr_std_dev_proj[32, :]\nprof_diff_proj = diff_orig_appr_proj[32, :]\n\nx = np.arange(0, 64, 1)\n\nfig, ax = plt.subplots()\n\nax.plot(x, prof_diff_proj)\n#ax.plot(x, prof_appr_std_dev_proj)\nax.set_xlabel(\"Profile curve of the difference\")\n\nText(0.5, 0, 'Profile curve of the difference')\n\n\n\n\n\n\n\n\n\n\nprint(np.std(proj_data_par[0]))\n\n12.85805956206453",
+    "text": "Approximation in L2\nApproximating the original frames in \\(\\mathbb{L}_{2}\\)\n\n\nL2 approximation error (sum):  0.00024574932758200305\n\n\n\n\n\n\n\n\n\n\nprof_orig_proj = proj_data_par[0, 32, :]\nprof_appr_proj = appr_proj[32, :]\nprof_appr_std_dev_proj = appr_std_dev_proj[32, :]\nprof_diff_proj = diff_orig_appr_proj[32, :]\n\nx = np.arange(0, 64, 1)\n\nfig, ax = plt.subplots()\n\nax.plot(x, prof_diff_proj)\n#ax.plot(x, prof_appr_std_dev_proj)\nax.set_xlabel(\"Profile curve of the difference\")\n\nText(0.5, 0, 'Profile curve of the difference')\n\n\n\n\n\n\n\n\n\n\nprint(np.std(proj_data_par[0]))\n\n12.85805956206453",
     "crumbs": [
       "Home",
       "Topics",
@@ -166,7 +166,19 @@
     "href": "topics/3_reconstruction.html#direct-reconstruction-methods",
     "title": "Reconstruction",
     "section": "Direct reconstruction methods",
-    "text": "Direct reconstruction methods\nOne of the earliest and the original methodologies is the inverse of the Radon transform. Basically, the transformation uses the most simplistic approach to model the traversal of the gamma photons from the source to the detectors, with straight lines. To be more precise the formula \\[\n\\mathbb{R}f(\\alpha, s) = \\int_{-\\infty}^{\\infty} f((z \\sin{\\alpha} + s \\cos{\\alpha}),(-z \\cos{\\alpha} + s \\sin{\\alpha})) dz,\n\\] where \\(f(x, y) \\in \\mathbb{R}^{2} \\rightarrow \\mathbb{R}\\). This could be understood as reparameterization of a straight line \\(L\\) with respect to the arc length. ## Iterative reconstruction methods",
+    "text": "Direct reconstruction methods\nOne of the earliest and the original methodologies is the inverse of the Radon transform. Basically, the transformation uses the most simplistic approach to model the traversal of the gamma photons from the source to the detectors, with straight lines. To be more precise the formula \\[\nRf(\\alpha, s) = \\int_{-\\infty}^{\\infty} f((z \\sin{\\alpha} + s \\cos{\\alpha}),(-z \\cos{\\alpha} + s \\sin{\\alpha})) dz,\n\\] where \\(f(x, y) \\in \\mathbb{R}^{2} \\rightarrow \\mathbb{R}\\). This could be understood as reparameterization of a straight line \\(L\\) with respect to the arc length.",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "Reconstruction"
+    ]
+  },
+  {
+    "objectID": "topics/3_reconstruction.html#iterative-reconstruction-methods",
+    "href": "topics/3_reconstruction.html#iterative-reconstruction-methods",
+    "title": "Reconstruction",
+    "section": "Iterative reconstruction methods",
+    "text": "Iterative reconstruction methods",
     "crumbs": [
       "Home",
       "Topics",
