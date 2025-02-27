@@ -1,7 +1,17 @@
 ---
 title: Reconstruction
 ---
+
+Recall that in spect data [math](0_spect_data_math.qmd) reconstruction is basically the methodology looking for $F^{+}$, in the equation
+$$
+F(u) = g^{\dagger},
+$$
+where $^{+}$ stands for the pseudo-inverse. So in general looking to solve this equation and is to come up with a methodology to approximate the original distribution of the pharmaceutical inside the body.
+
 ## Direct reconstruction methods
-
-
+One of the earliest and the original methodologies is the inverse of the [Radon transform](https://en.wikipedia.org/wiki/Radon_transform). Basically, the transformation uses the most simplistic approach to model the traversal of the [gamma photons](https://en.wikipedia.org/wiki/Gamma_ray) from the source to the detectors, with straight lines. To be more precise the formula
+$$
+\mathbb{R}f(\alpha, s) = \int_{-\infty}^{\infty} f((z \sin{\alpha} + s \cos{\alpha}),(-z \cos{\alpha} + s \sin{\alpha})) dz,
+$$
+where $f(x, y) \in \mathbb{R}^{2} \rightarrow \mathbb{R}$. This could be understood as reparameterization of a straight line $L$ with respect to the arc length.
 ## Iterative reconstruction methods

@@ -1,0 +1,32 @@
+{
+  "index.qmd": {
+    "index.html": "3f621625"
+  },
+  "blog.qmd": {
+    "blog.html": "29b4a2c6"
+  },
+  "topics/acquisition.qmd": {
+    "acquisition.html": "7f08cab1"
+  },
+  "topics.qmd": {
+    "topics.html": "537d48da"
+  },
+  "topics/c_reconstruction.qmd": {
+    "c_reconstruction.html": "ebbcf9e8"
+  },
+  "topics/b_acquisition.qmd": {
+    "b_acquisition.html": "e3dec8c0"
+  },
+  "topics/a_radiopharmaceuticals.qmd": {
+    "a_radiopharmaceuticals.html": "35e0dc9c"
+  },
+  "topics/d_processing.qmd": {
+    "d_processing.html": "464961d4"
+  },
+  "topics/e_spect_data_math.qmd": {
+    "e_spect_data_math.html": "c7550384"
+  },
+  "topics/processing/a_moco.qmd": {
+    "a_moco.html": "581a8d67"
+  }
+}

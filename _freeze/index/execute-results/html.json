@@ -1,0 +1,12 @@
+{
+  "hash": "c8f24c8280a36e1eed11e343a4acfbc1",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Models in Nuclear Cardiology\"\nsubtitle: \"The tale of Gamma photons from the heart\"\nauthor:\n  - name: Adam Istvan Szucs\n    orcid: 0000-0002-7984-4542\n    email: szaqaei@inf.elte.hu\n    affiliation: \n      - name: Eötvös Loránd University (Hungary)\n      - department: Computer Algebra\n  - name: Bela Kari\n    orcid: 0009-0000-5091-7712\n    email: kari.bela@semmelweis.hu\n    affiliation:\n      - name: Semmelweis University (Hungary)\n      - department : Nuclear Medicine\n  - name: Adam Zlehovszky\n    orcid: 0009-0001-1896-855X\n    email: adam.zlehovszky@inf.elte.hu\n    affiliation:\n      - name: Eötvös Loránd University (Hungary)\n      - department: Computer Algebra\ndate: \"2024-12-10\"\nbibliography: preliminaries.bib\nengine: jupyter\nformat:\n  html:\n    toc: true\nexecute:\n  echo: true\n  freeze: auto\n  error: true\nfrom: markdown+emoji\n---\n\n\n\n## Introduction\nNuclear cardiology use noninvasive technqiues to assess the myocardial metabolism, evaluate the pumping function of the heart as well as visualize the size and location of the metabolic deficiency.\n\n::: {.callout-note}\n## Why is it called nuclear?\nThe imaging is based on capturing the incident radiation from the injected radiopharmaceuticals. The method is labaled \"nuclear\" because the gamma photons are the result of radiactive decay.\n:::\n\n::: {.callout-important}\n## Is it dangerous?\nThey are completely safe and the uptake and radiation exposure during a heart scan is usually around 1.5 mSv, which compared to the yearly background radiation exposure 2.4 mSv, is negligible.\n:::\n\n\n## Single-photon emission computed tomography\n\nDuring this class, we will focus building models to solve problems in Single-photon emission computed tomography (SPECT).\n\n## Visualization\n\n\n\n## Base materials\n\nThe motivation and the archetype of this class is written in [oftankonyv](http://oftankonyv.reak.bme.hu/).\n\n",
+    "supporting": [
+      "index_files/figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
