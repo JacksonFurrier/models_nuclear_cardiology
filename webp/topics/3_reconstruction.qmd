@@ -15,4 +15,5 @@ Rf(\alpha, s) = \int_{-\infty}^{\infty} f((z \sin{\alpha} + s \cos{\alpha}),(-z 
 $$
 where $f(x, y) \in \mathbb{R}^{2} \rightarrow \mathbb{R}$. This could be understood as reparameterization of a straight line $L$ with respect to the arc length.
 
+Here comes the animation with python!
 ## Iterative reconstruction methods
