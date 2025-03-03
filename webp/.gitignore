@@ -4,3 +4,5 @@ _freeze
 *.html
 *.ipynb
 /.quarto/
+*.mp4
+*.txt
