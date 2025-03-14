@@ -1,5 +1,5 @@
 ---
-title: Mathematical understanding of SPECT data
+title: 1. SPECT Math
 ---
 
 Single-photon emission computed tomography (SPECT) data is inherently stochastic. It's stochastic nature comes from the nuclear decay of radioisotopes in the molecular structure of the radiopharmaceuticals.

@@ -1,4 +1,4 @@
 ---
-title: Acquisition
+title: 3. Acquisition
 ---
 Here is my first post.

@@ -37,25 +37,25 @@
   {
     "objectID": "topics/2_acquisition.html",
     "href": "topics/2_acquisition.html",
-    "title": "Acquisition",
+    "title": "3. Acquisition",
     "section": "",
     "text": "Here is my first post.",
     "crumbs": [
       "Home",
       "Topics",
-      "Acquisition"
+      "3. Acquisition"
     ]
   },
   {
     "objectID": "topics/1_radiopharmaceuticals.html",
     "href": "topics/1_radiopharmaceuticals.html",
-    "title": "Radiopharmaceuticals",
+    "title": "2. Radiopharmaceuticals",
     "section": "",
     "text": "Here is my first post.",
     "crumbs": [
       "Home",
       "Topics",
-      "Radiopharmaceuticals"
+      "2. Radiopharmaceuticals"
     ]
   },
   {
@@ -109,121 +109,133 @@
   {
     "objectID": "topics/3_reconstruction.html",
     "href": "topics/3_reconstruction.html",
-    "title": "Reconstruction",
+    "title": "4. Reconstruction",
     "section": "",
     "text": "Recall that in spect data math reconstruction is basically the methodology looking for \\(F^{+}\\), in the equation \\[\nF(u) = g^{\\dagger},\n\\] where \\(^{+}\\) stands for the pseudo-inverse. So in general looking to solve this equation and is to come up with a methodology to approximate the original distribution of the pharmaceutical inside the body.",
     "crumbs": [
       "Home",
       "Topics",
-      "Reconstruction"
+      "4. Reconstruction"
     ]
   },
   {
     "objectID": "topics/3_reconstruction.html#direct-reconstruction-methods",
     "href": "topics/3_reconstruction.html#direct-reconstruction-methods",
-    "title": "Reconstruction",
+    "title": "4. Reconstruction",
     "section": "Direct reconstruction methods",
-    "text": "Direct reconstruction methods\nOne of the earliest and the original methodologies is the inverse of the Radon transform. Basically, the transformation uses the most simplistic approach to model the traversal of the gamma photons from the source to the detectors, with straight lines. To be more precise the formula \\[\nRf(\\alpha, s) = \\int_{-\\infty}^{\\infty} f((z \\sin{\\alpha} + s \\cos{\\alpha}),(-z \\cos{\\alpha} + s \\sin{\\alpha})) dz,\n\\] where \\(f(x, y) \\in \\mathbb{R}^{2} \\rightarrow \\mathbb{R}\\). This could be understood as reparameterization of a straight line \\(L\\) with respect to the arc length.",
+    "text": "Direct reconstruction methods\nOne of the earliest and the original methodologies is the inverse of the Radon transform. Basically, the transformation uses the most simplistic approach to model the traversal of the gamma photons from the source to the detectors, with straight lines. To be more precise the formula \\[\nRf(\\alpha, s) = \\int_{-\\infty}^{\\infty} f((z \\sin{\\alpha} + s \\cos{\\alpha}),(-z \\cos{\\alpha} + s \\sin{\\alpha})) dz,\n\\] where \\(f(x, y) \\in \\mathbb{R}^{2} \\rightarrow \\mathbb{R}\\). This could be understood as reparameterization of a straight line \\(L\\) with respect to the arc length.\nThe inversion formula reads as \\[\nf(x) = \\frac{1}{4 \\pi^{2}} \\int_{S^{2}} \\int_{\\mathbb{R}^{1}} \\frac{\\frac{d}{dt} Rf(t, \\theta)} {x \\omega - t} dt d\\theta,\n\\] which suffers from various mathematical deficiencies such as it is not integrable in the Riemann-sense, works only in even (symplectic) dimensions. To overcome these difficulties came the Filtered back projection algorithm1.",
     "crumbs": [
       "Home",
       "Topics",
-      "Reconstruction"
+      "4. Reconstruction"
     ]
   },
   {
     "objectID": "topics/3_reconstruction.html#iterative-reconstruction-methods",
     "href": "topics/3_reconstruction.html#iterative-reconstruction-methods",
-    "title": "Reconstruction",
+    "title": "4. Reconstruction",
     "section": "Iterative reconstruction methods",
     "text": "Iterative reconstruction methods",
     "crumbs": [
       "Home",
       "Topics",
-      "Reconstruction"
+      "4. Reconstruction"
+    ]
+  },
+  {
+    "objectID": "topics/3_reconstruction.html#footnotes",
+    "href": "topics/3_reconstruction.html#footnotes",
+    "title": "4. Reconstruction",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFor a deeper understanding of the reconstruction algorithm oftankonyv↩︎",
+    "crumbs": [
+      "Home",
+      "Topics",
+      "4. Reconstruction"
     ]
   },
   {
     "objectID": "topics/4_processing.html",
     "href": "topics/4_processing.html",
-    "title": "Processing",
+    "title": "5. Processing",
     "section": "",
     "text": "Here is my first post.",
     "crumbs": [
       "Home",
       "Topics",
-      "Processing"
+      "5. Processing"
     ]
   },
   {
     "objectID": "topics/0_spect_data_math.html",
     "href": "topics/0_spect_data_math.html",
-    "title": "Mathematical understanding of SPECT data",
+    "title": "1. SPECT Math",
     "section": "",
     "text": "Single-photon emission computed tomography (SPECT) data is inherently stochastic. It’s stochastic nature comes from the nuclear decay of radioisotopes in the molecular structure of the radiopharmaceuticals.",
     "crumbs": [
       "Home",
       "Topics",
-      "Mathematical understanding of SPECT data"
+      "1. SPECT Math"
     ]
   },
   {
     "objectID": "topics/0_spect_data_math.html#mathematical-modelling-of-the-acquisition",
     "href": "topics/0_spect_data_math.html#mathematical-modelling-of-the-acquisition",
-    "title": "Mathematical understanding of SPECT data",
+    "title": "1. SPECT Math",
     "section": "Mathematical modelling of the “acquisition”",
     "text": "Mathematical modelling of the “acquisition”\nMany and most of the problems in SPECT imaging comes from the following formula of the inverse problem as an operator equation \\[\nF(u) = g^{\\dagger},\n\\] where the unknown quantity of interest is \\(u\\), which can be described as an element in a real Banach-space \\(X\\), the data \\(g^{\\dagger}\\) is non-negative, integrable function on some compact manifold \\(\\mathbb{M} \\subset \\mathbb{R}^{d}\\) and the possibly non-linear forward operator \\(F\\) describes the imaging setup.\nIn general the ideal photon detection can be described by a Poisson point process (PPP) \\(G\\), the density of which is the marginal spatial photon density \\(g^{\\dagger}\\). Let \\(\\{x_{1}, \\dots, x_{N}\\} \\subset \\mathbb{M}\\) denote the positions, where the photons were detected. The total number \\(N\\) of detected photons is also random. Let \\[G = \\sum_{i=1}^{N} \\delta_{x_{i}}\\] as a sum of Dirac-measures at the photon positions and denote by \\[G(A)= \\#\\{1 \\leq i \\leq N | x_{i} \\in A \\}\\] the number of photons in a measurable subset \\(A \\subset \\mathbb{M}\\). Then it is physically evident that \\[{\\bf E}[G(A)] = \\int_{A} g^{\\dagger} dx\\] and that the random variables \\(G(A_{i}), i\\in [1, M]\\) for any finite number of disjoint, measurable sets \\(A_{i} \\subset \\mathbb{M}\\) are stochastically independent. Hence, by definition, \\(G\\) is a Poisson process, and as a consequence, \\(G(A)\\) is a poisson distributed integer-valued random variable.",
     "crumbs": [
       "Home",
       "Topics",
-      "Mathematical understanding of SPECT data"
+      "1. SPECT Math"
     ]
   },
   {
     "objectID": "topics/0_spect_data_math.html#poisson-processes-of-spect-data",
     "href": "topics/0_spect_data_math.html#poisson-processes-of-spect-data",
-    "title": "Mathematical understanding of SPECT data",
+    "title": "1. SPECT Math",
     "section": "Poisson processes of SPECT data",
     "text": "Poisson processes of SPECT data\nA point process on \\(\\mathbb{M}\\) can be seen as a random collection of points \\(\\{ x_{i}, \\dots, x_{N} \\} \\subset \\mathbb{M}\\) satisfying certain measurability properties.\n\n\n\n\n\n\nDefinition (Poisson point process)\n\n\n\nLet \\(g^{\\dagger} \\in \\mathbf{L}^{1}(\\mathbb{M})\\) with \\(g^{\\dagger} \\geq 0\\). A point process \\(G = \\sum_{i=1}^{N} \\delta_{x_{i}}\\) is called a Poisson point process (PPP) or Poisson process (PP) with intensity \\(g^{\\dagger}\\) if\n\nFor each choice of disjoint, measurable sets \\(A_{1}, \\dots, A_{n} \\subset \\mathbb{M}\\) random variables \\(G(A_{j})\\) are stochastically independent.\n\\({\\bf E}[G(A)] = \\int_{A} g^{\\dagger} dx\\) for each measurable set \\(A \\subset \\mathbb{M}\\).\n\n\n\n\n\n\n\n\n\nProposition\n\n\n\nLet \\(G\\) be a Poisson process with intensity \\(g^{\\dagger} \\in \\mathbf{L}^{1}(\\mathbb{M})\\). Then for each measurable \\(A \\subset \\mathbb{M}\\) the random variable \\(G(A)\\) is Poisson distributed with parameter \\(\\lambda = \\int_{A} g^{\\dagger} dx\\), i.e. \\({\\bf P}[G(A) = k] = e^{-\\lambda} \\frac{\\lambda^{k}}{k!}\\) for \\(k \\in \\mathbb{N}\\).\n\n\n\n\n\n\n\n\nProposition\n\n\n\nPoisson process \\(G\\) with intensity \\(g^{\\dagger} \\in \\mathbf{L}^{1}(\\mathbb{M})\\) conditioned on \\(G(\\mathbb{M}) = N\\) is a Bernoulli process with parameter \\(N\\) and probability measure \\(\\mu(A) = \\int_{A} g^{\\dagger} / \\int_{\\mathbb{M}}g^{\\dagger}dx.\\) In other words, conditioned on \\(G(\\mathbb{M}) = N\\) the points are distributed like independent random variables \\(X_{1}, \\dots, X_{N}\\) distributed according to \\(\\mu\\).",
     "crumbs": [
       "Home",
       "Topics",
-      "Mathematical understanding of SPECT data"
+      "1. SPECT Math"
     ]
   },
   {
     "objectID": "topics/0_spect_data_math.html#poisson-process-characteristics",
     "href": "topics/0_spect_data_math.html#poisson-process-characteristics",
-    "title": "Mathematical understanding of SPECT data",
+    "title": "1. SPECT Math",
     "section": "Poisson process characteristics",
     "text": "Poisson process characteristics\nFew of the properties of the Poisson processes are the following\n\n\n\n\n\n\nLawfulness\n\n\n\nIt means that the events are not arriving in the exact same time \\[\\lim_{\\Delta t \\rightarrow 0} P(G(t + \\Delta t) - G(t) &gt; 1\\ |\\ G(t + \\Delta t) - G(t) \\geq 1 ) = 0\\]\n\n\n\n\n\n\n\n\nMemory-less, ageless\n\n\n\nThis means that the events arriving after another are stochastically independent. \\[P(G(A) &gt; a + b\\ |\\ G(A) &gt; a) = P(G(A) &gt; b) \\]\n\n\nZleho ideas, Markov processes\n\nSensitivity is a constant multiplier on the pixel values\nPixel values are independent, isotropically independent, binning is independent\nThey are independent as much as phone calls, it is like histogramming the areas and centers\nGaussian approximation will be good with a weighted least squares, division by stdev will result in a good approximation\nPhoton decay, between two decay time is exponential, linear transform of poisson will be our image",
     "crumbs": [
       "Home",
       "Topics",
-      "Mathematical understanding of SPECT data"
+      "1. SPECT Math"
     ]
   },
   {
     "objectID": "topics/0_spect_data_math.html#projection-data-of-spect",
     "href": "topics/0_spect_data_math.html#projection-data-of-spect",
-    "title": "Mathematical understanding of SPECT data",
+    "title": "1. SPECT Math",
     "section": "Projection data of SPECT",
     "text": "Projection data of SPECT\n\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect\n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect",
     "crumbs": [
       "Home",
       "Topics",
-      "Mathematical understanding of SPECT data"
+      "1. SPECT Math"
     ]
   },
   {
     "objectID": "topics/0_spect_data_math.html#approximation-in-l2",
     "href": "topics/0_spect_data_math.html#approximation-in-l2",
-    "title": "Mathematical understanding of SPECT data",
+    "title": "1. SPECT Math",
     "section": "Approximation in L2",
-    "text": "Approximation in L2\nApproximating the original frames in \\(\\mathbb{L}_{2}\\)\n\n\nL2 approximation error (sum):  0.00025033376729610566\n\n\n\n\n\n\n\n\n\n\nprof_orig_proj = proj_data_par[0, 32, :]\nprof_appr_proj = appr_proj[32, :]\nprof_appr_std_dev_proj = appr_std_dev_proj[32, :]\nprof_diff_proj = diff_orig_appr_proj[32, :]\n\nx = np.arange(0, 64, 1)\n\nfig, ax = plt.subplots()\n\nax.plot(x, prof_diff_proj)\n#ax.plot(x, prof_appr_std_dev_proj)\nax.set_xlabel(\"Profile curve of the difference\")\n\nText(0.5, 0, 'Profile curve of the difference')\n\n\n\n\n\n\n\n\n\n\nprint(np.std(proj_data_par[0]))\n\n12.85805956206453",
+    "text": "Approximation in L2\nApproximating the original frames in \\(\\mathbb{L}_{2}\\)\n\n\nL2 approximation error (sum):  0.00012603061271760084\n\n\n\n\n\n\n\n\n\n\nprof_orig_proj = proj_data_par[0, 32, :]\nprof_appr_proj = appr_proj[32, :]\nprof_appr_std_dev_proj = appr_std_dev_proj[32, :]\nprof_diff_proj = diff_orig_appr_proj[32, :]\n\nx = np.arange(0, 64, 1)\n\nfig, ax = plt.subplots()\n\nax.plot(x, prof_diff_proj)\n#ax.plot(x, prof_appr_std_dev_proj)\nax.set_xlabel(\"Profile curve of the difference\")\n\nText(0.5, 0, 'Profile curve of the difference')\n\n\n\n\n\n\n\n\n\n\nprint(np.std(proj_data_par[0]))\n\n12.85805956206453",
     "crumbs": [
       "Home",
       "Topics",
-      "Mathematical understanding of SPECT data"
+      "1. SPECT Math"
     ]
   },
   {

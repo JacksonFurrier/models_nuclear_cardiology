@@ -1,5 +1,5 @@
 ---
-title: Reconstruction
+title: 4. Reconstruction
 ---
 
 Recall that in spect data [math](0_spect_data_math.qmd) reconstruction is basically the methodology looking for $F^{+}$, in the equation
@@ -15,5 +15,14 @@ Rf(\alpha, s) = \int_{-\infty}^{\infty} f((z \sin{\alpha} + s \cos{\alpha}),(-z 
 $$
 where $f(x, y) \in \mathbb{R}^{2} \rightarrow \mathbb{R}$. This could be understood as reparameterization of a straight line $L$ with respect to the arc length.
 
-Here comes the animation with python!
+The inversion formula reads as
+$$
+f(x) = \frac{1}{4 \pi^{2}} \int_{S^{2}} \int_{\mathbb{R}^{1}} \frac{\frac{d}{dt} Rf(t, \theta)} {x \omega - t} dt d\theta,
+$$
+which suffers from various mathematical deficiencies such as it is not integrable in the Riemann-sense, works only in even (symplectic) dimensions. To overcome these difficulties came the [Filtered back projection](https://en.wikipedia.org/wiki/Tomographic_reconstruction) algorithm[^1].
+
+
+[^1]: For a deeper understanding of the reconstruction algorithm [oftankonyv](http://oftankonyv.reak.bme.hu/tiki-index.php?page=The+Filtered+Backprojection)
+
+
 ## Iterative reconstruction methods

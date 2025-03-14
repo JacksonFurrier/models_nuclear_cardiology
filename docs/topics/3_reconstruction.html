@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reconstruction</title>
+<title>4. Reconstruction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -141,7 +141,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../topics/0_spect_data_math.html">Topics</a></li><li class="breadcrumb-item"><a href="../topics/3_reconstruction.html">Reconstruction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../topics/0_spect_data_math.html">Topics</a></li><li class="breadcrumb-item"><a href="../topics/3_reconstruction.html">4. Reconstruction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -173,31 +173,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../topics/0_spect_data_math.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Mathematical understanding of SPECT data</span></a>
+ <span class="menu-text">1. SPECT Math</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../topics/1_radiopharmaceuticals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Radiopharmaceuticals</span></a>
+ <span class="menu-text">2. Radiopharmaceuticals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../topics/2_acquisition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Acquisition</span></a>
+ <span class="menu-text">3. Acquisition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../topics/3_reconstruction.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Reconstruction</span></a>
+ <span class="menu-text">4. Reconstruction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../topics/4_processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processing</span></a>
+ <span class="menu-text">5. Processing</span></a>
   </div>
 </li>
       </ul>
@@ -214,7 +214,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../topics/4_processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processing</span></a>
+ <span class="menu-text">5. Processing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,9 +234,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../topics/0_spect_data_math.html">Topics</a></li><li class="breadcrumb-item"><a href="../topics/3_reconstruction.html">Reconstruction</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../topics/0_spect_data_math.html">Topics</a></li><li class="breadcrumb-item"><a href="../topics/3_reconstruction.html">4. Reconstruction</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Reconstruction</h1>
+<h1 class="title">4. Reconstruction</h1>
 </div>
 
 
@@ -261,6 +261,9 @@ F(u) = g^{\dagger},
 <p>One of the earliest and the original methodologies is the inverse of the <a href="https://en.wikipedia.org/wiki/Radon_transform">Radon transform</a>. Basically, the transformation uses the most simplistic approach to model the traversal of the <a href="https://en.wikipedia.org/wiki/Gamma_ray">gamma photons</a> from the source to the detectors, with straight lines. To be more precise the formula <span class="math display">\[
 Rf(\alpha, s) = \int_{-\infty}^{\infty} f((z \sin{\alpha} + s \cos{\alpha}),(-z \cos{\alpha} + s \sin{\alpha})) dz,
 \]</span> where <span class="math inline">\(f(x, y) \in \mathbb{R}^{2} \rightarrow \mathbb{R}\)</span>. This could be understood as reparameterization of a straight line <span class="math inline">\(L\)</span> with respect to the arc length.</p>
+<p>The inversion formula reads as <span class="math display">\[
+f(x) = \frac{1}{4 \pi^{2}} \int_{S^{2}} \int_{\mathbb{R}^{1}} \frac{\frac{d}{dt} Rf(t, \theta)} {x \omega - t} dt d\theta,
+\]</span> which suffers from various mathematical deficiencies such as it is not integrable in the Riemann-sense, works only in even (symplectic) dimensions. To overcome these difficulties came the <a href="https://en.wikipedia.org/wiki/Tomographic_reconstruction">Filtered back projection</a> algorithm<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 </section>
 <section id="iterative-reconstruction-methods" class="level2">
 <h2 class="anchored" data-anchor-id="iterative-reconstruction-methods">Iterative reconstruction methods</h2>
@@ -268,7 +271,13 @@ Rf(\alpha, s) = \int_{-\infty}^{\infty} f((z \sin{\alpha} + s \cos{\alpha}),(-z 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>For a deeper understanding of the reconstruction algorithm <a href="http://oftankonyv.reak.bme.hu/tiki-index.php?page=The+Filtered+Backprojection">oftankonyv</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
