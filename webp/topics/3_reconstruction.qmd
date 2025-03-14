@@ -18,11 +18,35 @@ where $f(x, y) \in \mathbb{R}^{2} \rightarrow \mathbb{R}$. This could be underst
 The inversion formula reads as
 $$
 f(x) = \frac{1}{4 \pi^{2}} \int_{S^{2}} \int_{\mathbb{R}^{1}} \frac{\frac{d}{dt} Rf(t, \theta)} {x \omega - t} dt d\theta,
-$$
+$$ {#eq-rad-inversion}
 which suffers from various mathematical deficiencies such as it is not integrable in the Riemann-sense, works only in even (symplectic) dimensions. To overcome these difficulties came the [Filtered back projection](https://en.wikipedia.org/wiki/Tomographic_reconstruction) algorithm[^1].
+
+## Iterative reconstruction methods
+The philosophy behind iterative reconstruction methods is to give a bit more flexibility to the inversion method or algorihtm in creating the source distritubion, the object of reconstruction. To formalize the general approach the base equation for the inversion formula is well described in [oftankonyv](http://oftankonyv.reak.bme.hu/tiki-index.php?page=Descrete+Base+for+the+reconstruction&structure=Book+for+Physicists). In a nutshell, if one approaches the @{eq-rad-inversion} by series expansion[^2], one arrives at the following in matrix notation
+$$
+y = Ax.
+$$
+
+Now the problem of reconstruction is not solved but rather transformed into a numerical issue, namely in real-life the matrices $A$ are sparse and sized $\approx 10^{12}$, since not all the line of response (LOR) will pass through a voxel[^3]. During the development of reconstruction methods, multiple drawbacks need to be addressed. One is that the matrix $A$ won't be square therefore one needs methods that decouple the dimensionality of the problem from the inversion process and aligns with the stochastic nature of SPECT image in the optimization scheme.
+
+### (A) MLEM
+
+
+### (B) OSEM
+
+
+### (C) BSREM
+
+
+### (D) KEM
+
+
+### (E) OSCGM
+
 
 
 [^1]: For a deeper understanding of the reconstruction algorithm [oftankonyv](http://oftankonyv.reak.bme.hu/tiki-index.php?page=The+Filtered+Backprojection)
 
+[^2]: For a detailed derivation please follow the steps of [oftankonyv](http://oftankonyv.reak.bme.hu/tiki-index.php?page=Descrete+Base+for+the+reconstruction&structure=Book+for+Physicists)
 
-## Iterative reconstruction methods
+[^3]: This simply means that not all detectors "see" a particular voxel in space

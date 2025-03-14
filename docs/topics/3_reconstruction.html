@@ -261,14 +261,33 @@ F(u) = g^{\dagger},
 <p>One of the earliest and the original methodologies is the inverse of the <a href="https://en.wikipedia.org/wiki/Radon_transform">Radon transform</a>. Basically, the transformation uses the most simplistic approach to model the traversal of the <a href="https://en.wikipedia.org/wiki/Gamma_ray">gamma photons</a> from the source to the detectors, with straight lines. To be more precise the formula <span class="math display">\[
 Rf(\alpha, s) = \int_{-\infty}^{\infty} f((z \sin{\alpha} + s \cos{\alpha}),(-z \cos{\alpha} + s \sin{\alpha})) dz,
 \]</span> where <span class="math inline">\(f(x, y) \in \mathbb{R}^{2} \rightarrow \mathbb{R}\)</span>. This could be understood as reparameterization of a straight line <span class="math inline">\(L\)</span> with respect to the arc length.</p>
-<p>The inversion formula reads as <span class="math display">\[
+<p>The inversion formula reads as <span id="eq-rad-inversion"><span class="math display">\[
 f(x) = \frac{1}{4 \pi^{2}} \int_{S^{2}} \int_{\mathbb{R}^{1}} \frac{\frac{d}{dt} Rf(t, \theta)} {x \omega - t} dt d\theta,
-\]</span> which suffers from various mathematical deficiencies such as it is not integrable in the Riemann-sense, works only in even (symplectic) dimensions. To overcome these difficulties came the <a href="https://en.wikipedia.org/wiki/Tomographic_reconstruction">Filtered back projection</a> algorithm<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+\tag{1}\]</span></span> which suffers from various mathematical deficiencies such as it is not integrable in the Riemann-sense, works only in even (symplectic) dimensions. To overcome these difficulties came the <a href="https://en.wikipedia.org/wiki/Tomographic_reconstruction">Filtered back projection</a> algorithm<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 </section>
 <section id="iterative-reconstruction-methods" class="level2">
 <h2 class="anchored" data-anchor-id="iterative-reconstruction-methods">Iterative reconstruction methods</h2>
+<p>The philosophy behind iterative reconstruction methods is to give a bit more flexibility to the inversion method or algorihtm in creating the source distritubion, the object of reconstruction. To formalize the general approach the base equation for the inversion formula is well described in <a href="http://oftankonyv.reak.bme.hu/tiki-index.php?page=Descrete+Base+for+the+reconstruction&amp;structure=Book+for+Physicists">oftankonyv</a>. In a nutshell, if one approaches the <a href="#eq-rad-inversion" class="quarto-xref">Equation&nbsp;1</a> by series expansion<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, one arrives at the following in matrix notation <span class="math display">\[
+y = Ax.
+\]</span></p>
+<p>Now the problem of reconstruction is not solved but rather transformed into a numerical issue, namely in real-life the matrices <span class="math inline">\(A\)</span> are sparse and sized <span class="math inline">\(\approx 10^{12}\)</span>, since not all the line of response (LOR) will pass through a voxel<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. During the development of reconstruction methods, multiple drawbacks need to be addressed. One is that the matrix <span class="math inline">\(A\)</span> won’t be square therefore one needs methods that decouple the dimensionality of the problem from the inversion process and aligns with the stochastic nature of SPECT image in the optimization scheme.</p>
+<section id="a-mlem" class="level3">
+<h3 class="anchored" data-anchor-id="a-mlem">(A) MLEM</h3>
+</section>
+<section id="b-osem" class="level3">
+<h3 class="anchored" data-anchor-id="b-osem">(B) OSEM</h3>
+</section>
+<section id="c-bsrem" class="level3">
+<h3 class="anchored" data-anchor-id="c-bsrem">(C) BSREM</h3>
+</section>
+<section id="d-kem" class="level3">
+<h3 class="anchored" data-anchor-id="d-kem">(D) KEM</h3>
+</section>
+<section id="e-oscgm" class="level3">
+<h3 class="anchored" data-anchor-id="e-oscgm">(E) OSCGM</h3>
 
 
+</section>
 </section>
 
 
@@ -276,6 +295,8 @@ f(x) = \frac{1}{4 \pi^{2}} \int_{S^{2}} \int_{\mathbb{R}^{1}} \frac{\frac{d}{dt}
 
 <ol>
 <li id="fn1"><p>For a deeper understanding of the reconstruction algorithm <a href="http://oftankonyv.reak.bme.hu/tiki-index.php?page=The+Filtered+Backprojection">oftankonyv</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>For a detailed derivation please follow the steps of <a href="http://oftankonyv.reak.bme.hu/tiki-index.php?page=Descrete+Base+for+the+reconstruction&amp;structure=Book+for+Physicists">oftankonyv</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>This simply means that not all detectors “see” a particular voxel in space<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

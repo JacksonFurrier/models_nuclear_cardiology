@@ -123,7 +123,7 @@
     "href": "topics/3_reconstruction.html#direct-reconstruction-methods",
     "title": "4. Reconstruction",
     "section": "Direct reconstruction methods",
-    "text": "Direct reconstruction methods\nOne of the earliest and the original methodologies is the inverse of the Radon transform. Basically, the transformation uses the most simplistic approach to model the traversal of the gamma photons from the source to the detectors, with straight lines. To be more precise the formula \\[\nRf(\\alpha, s) = \\int_{-\\infty}^{\\infty} f((z \\sin{\\alpha} + s \\cos{\\alpha}),(-z \\cos{\\alpha} + s \\sin{\\alpha})) dz,\n\\] where \\(f(x, y) \\in \\mathbb{R}^{2} \\rightarrow \\mathbb{R}\\). This could be understood as reparameterization of a straight line \\(L\\) with respect to the arc length.\nThe inversion formula reads as \\[\nf(x) = \\frac{1}{4 \\pi^{2}} \\int_{S^{2}} \\int_{\\mathbb{R}^{1}} \\frac{\\frac{d}{dt} Rf(t, \\theta)} {x \\omega - t} dt d\\theta,\n\\] which suffers from various mathematical deficiencies such as it is not integrable in the Riemann-sense, works only in even (symplectic) dimensions. To overcome these difficulties came the Filtered back projection algorithm1.",
+    "text": "Direct reconstruction methods\nOne of the earliest and the original methodologies is the inverse of the Radon transform. Basically, the transformation uses the most simplistic approach to model the traversal of the gamma photons from the source to the detectors, with straight lines. To be more precise the formula \\[\nRf(\\alpha, s) = \\int_{-\\infty}^{\\infty} f((z \\sin{\\alpha} + s \\cos{\\alpha}),(-z \\cos{\\alpha} + s \\sin{\\alpha})) dz,\n\\] where \\(f(x, y) \\in \\mathbb{R}^{2} \\rightarrow \\mathbb{R}\\). This could be understood as reparameterization of a straight line \\(L\\) with respect to the arc length.\nThe inversion formula reads as \\[\nf(x) = \\frac{1}{4 \\pi^{2}} \\int_{S^{2}} \\int_{\\mathbb{R}^{1}} \\frac{\\frac{d}{dt} Rf(t, \\theta)} {x \\omega - t} dt d\\theta,\n\\tag{1}\\] which suffers from various mathematical deficiencies such as it is not integrable in the Riemann-sense, works only in even (symplectic) dimensions. To overcome these difficulties came the Filtered back projection algorithm1.",
     "crumbs": [
       "Home",
       "Topics",
@@ -135,7 +135,7 @@
     "href": "topics/3_reconstruction.html#iterative-reconstruction-methods",
     "title": "4. Reconstruction",
     "section": "Iterative reconstruction methods",
-    "text": "Iterative reconstruction methods",
+    "text": "Iterative reconstruction methods\nThe philosophy behind iterative reconstruction methods is to give a bit more flexibility to the inversion method or algorihtm in creating the source distritubion, the object of reconstruction. To formalize the general approach the base equation for the inversion formula is well described in oftankonyv. In a nutshell, if one approaches the Equation 1 by series expansion2, one arrives at the following in matrix notation \\[\ny = Ax.\n\\]\nNow the problem of reconstruction is not solved but rather transformed into a numerical issue, namely in real-life the matrices \\(A\\) are sparse and sized \\(\\approx 10^{12}\\), since not all the line of response (LOR) will pass through a voxel3. During the development of reconstruction methods, multiple drawbacks need to be addressed. One is that the matrix \\(A\\) won’t be square therefore one needs methods that decouple the dimensionality of the problem from the inversion process and aligns with the stochastic nature of SPECT image in the optimization scheme.\n\n(A) MLEM\n\n\n(B) OSEM\n\n\n(C) BSREM\n\n\n(D) KEM\n\n\n(E) OSCGM",
     "crumbs": [
       "Home",
       "Topics",
@@ -147,7 +147,7 @@
     "href": "topics/3_reconstruction.html#footnotes",
     "title": "4. Reconstruction",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nFor a deeper understanding of the reconstruction algorithm oftankonyv↩︎",
+    "text": "Footnotes\n\n\nFor a deeper understanding of the reconstruction algorithm oftankonyv↩︎\nFor a detailed derivation please follow the steps of oftankonyv↩︎\nThis simply means that not all detectors “see” a particular voxel in space↩︎",
     "crumbs": [
       "Home",
       "Topics",
@@ -231,7 +231,7 @@
     "href": "topics/0_spect_data_math.html#approximation-in-l2",
     "title": "1. SPECT Math",
     "section": "Approximation in L2",
-    "text": "Approximation in L2\nApproximating the original frames in \\(\\mathbb{L}_{2}\\)\n\n\nL2 approximation error (sum):  0.00012603061271760084\n\n\n\n\n\n\n\n\n\n\nprof_orig_proj = proj_data_par[0, 32, :]\nprof_appr_proj = appr_proj[32, :]\nprof_appr_std_dev_proj = appr_std_dev_proj[32, :]\nprof_diff_proj = diff_orig_appr_proj[32, :]\n\nx = np.arange(0, 64, 1)\n\nfig, ax = plt.subplots()\n\nax.plot(x, prof_diff_proj)\n#ax.plot(x, prof_appr_std_dev_proj)\nax.set_xlabel(\"Profile curve of the difference\")\n\nText(0.5, 0, 'Profile curve of the difference')\n\n\n\n\n\n\n\n\n\n\nprint(np.std(proj_data_par[0]))\n\n12.85805956206453",
+    "text": "Approximation in L2\nApproximating the original frames in \\(\\mathbb{L}_{2}\\)\n\n\nL2 approximation error (sum):  0.00015577797054745253\n\n\n\n\n\n\n\n\n\n\nprof_orig_proj = proj_data_par[0, 32, :]\nprof_appr_proj = appr_proj[32, :]\nprof_appr_std_dev_proj = appr_std_dev_proj[32, :]\nprof_diff_proj = diff_orig_appr_proj[32, :]\n\nx = np.arange(0, 64, 1)\n\nfig, ax = plt.subplots()\n\nax.plot(x, prof_diff_proj)\n#ax.plot(x, prof_appr_std_dev_proj)\nax.set_xlabel(\"Profile curve of the difference\")\n\nText(0.5, 0, 'Profile curve of the difference')\n\n\n\n\n\n\n\n\n\n\nprint(np.std(proj_data_par[0]))\n\n12.85805956206453",
     "crumbs": [
       "Home",
       "Topics",
