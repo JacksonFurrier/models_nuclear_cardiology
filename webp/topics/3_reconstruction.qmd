@@ -30,19 +30,19 @@ $$
 Now the problem of reconstruction is not solved but rather transformed into a numerical issue, namely in real-life the matrices $A$ are sparse and sized $\approx 10^{12}$, since not all the line of response (LOR) will pass through a voxel[^3]. During the development of reconstruction methods, multiple drawbacks need to be addressed. One is that the matrix $A$ won't be square therefore one needs methods that decouple the dimensionality of the problem from the inversion process and aligns with the stochastic nature of SPECT image in the optimization scheme.
 
 ### (A) MLEM
-
+Maximum Likelihood Expectation Maximization
 
 ### (B) OSEM
-
+Ordered Subsets Expectation Maximization
 
 ### (C) BSREM
-
+Block Sequential Regularized Expectation Maximization
 
 ### (D) KEM
-
+Kernel Expectation Maximization
 
 ### (E) OSCGM
-
+Ordered Subsets Conjugate Gradient Maximization
 
 
 [^1]: For a deeper understanding of the reconstruction algorithm [oftankonyv](http://oftankonyv.reak.bme.hu/tiki-index.php?page=The+Filtered+Backprojection)
